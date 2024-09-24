@@ -1,13 +1,9 @@
-def fibonacci():
-    a, b = 0, 1
-    while True:
-        yield a
-        a, b = b, a+b
-        
-def main():
-    fib = fibonacci()
-    for i in range(10):
-        print(next(fib))
-        
-if __name__ == "__main__":
-    main()
+def fibs(n):
+	result = [0, 1]
+	for i in range(n-2):
+		result.append(result[-2] + result[-1])
+	return result
+
+if __name__ == '__main__':
+	n = int(input('How many Fibonacci numbers do you want? '))
+	print(fibs(n))
